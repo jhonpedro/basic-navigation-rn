@@ -4,7 +4,7 @@ import { Text } from 'react-native'
 import { StackScreenProps } from '@react-navigation/stack'
 
 import ScreenContainer from './ScreenContainer'
-import { HomeStackParamList } from '../../App'
+import { HomeStackParamList } from '../pages/LoggedIn'
 
 interface DetailsProps
 	extends StackScreenProps<HomeStackParamList, 'Details'> {}
