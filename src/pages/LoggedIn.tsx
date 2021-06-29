@@ -6,14 +6,15 @@ import Home from '../components/Home'
 import Details from '../components/Details'
 import Search2 from '../components/Search2'
 import Profile from '../components/Profile'
+import {
+	DrawerStackScreen,
+	HomeStackParamList,
+	SearchStackParamList,
+	TabsParamList,
+} from '../@types'
 
-export type TabsParamList = { Home: undefined; Search: undefined }
 const Tabs = createBottomTabNavigator<TabsParamList>()
 
-interface DetailsProps {
-	name: string
-}
-export type HomeStackParamList = { Home: {}; Details: DetailsProps }
 const HomeStack = createStackNavigator<HomeStackParamList>()
 const HomeStackScreen = () => (
 	<HomeStack.Navigator
@@ -32,7 +33,7 @@ const HomeStackScreen = () => (
 		/>
 	</HomeStack.Navigator>
 )
-export type DrawerStackScreen = { Home: undefined; Profile: undefined }
+
 const Drawer = createDrawerNavigator<DrawerStackScreen>()
 
 const TabsScreen = () => (
@@ -42,11 +43,7 @@ const TabsScreen = () => (
 	</Tabs.Navigator>
 )
 
-export type ProfileStackParamList = {
-	Search2: undefined
-	Home: { screen: 'Details'; params: { name: string } }
-}
-const ProfileStack = createStackNavigator<ProfileStackParamList>()
+const ProfileStack = createStackNavigator<SearchStackParamList>()
 const SearchStackScreen = () => (
 	<ProfileStack.Navigator
 		screenOptions={{

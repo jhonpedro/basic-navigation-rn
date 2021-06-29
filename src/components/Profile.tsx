@@ -3,9 +3,9 @@ import { ActivityIndicator, Button } from 'react-native'
 import { Text } from 'react-native'
 import { DrawerScreenProps } from '@react-navigation/drawer'
 
-import { DrawerStackScreen } from '../pages/LoggedIn'
 import ScreenContainer from './ScreenContainer'
 import { useAuth } from '../context/store'
+import { DrawerStackScreen } from '../@types'
 
 interface ProfileProps
 	extends DrawerScreenProps<DrawerStackScreen, 'Profile'> {}
